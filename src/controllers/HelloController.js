@@ -1,7 +1,7 @@
 class HelloController {
   async index(req, res) {
     return res.json({
-      hello: 'Fix deprecated moongose, and running at mongo DB'
+      hello: 'Fix deprecated mongoose, and running at mongo DB'
     })
   }
 }
