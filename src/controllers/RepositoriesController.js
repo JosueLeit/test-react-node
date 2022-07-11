@@ -27,9 +27,9 @@ class RepositoryController {
 
       const user = await User.findById(user_id)
 
-      console.log(user_id)
-      console.log(name)
-      console.log(url)
+      // console.log(user_id)
+      // console.log(name)
+      // console.log(url)
 
       if (!user) {
         return res.status(404).json()
@@ -38,7 +38,7 @@ class RepositoryController {
         userId: user_id,
         name
       })
-      console.log(repository)
+      // console.log(repository)
       if (repository) {
         return res
           .status(422)
@@ -53,7 +53,6 @@ class RepositoryController {
 
       return res.status(201).json(newRepository)
     } catch (err) {
-      console.error(err)
       return res.status(500).json({ error: 'internal server error.' })
     }
   }
