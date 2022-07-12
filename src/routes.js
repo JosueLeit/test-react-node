@@ -10,7 +10,7 @@ const routes = new Router()
 
 routes.post('/sessions', SessionsController.create)
 
-routes.use(auth)
+//routes.use(auth)
 //RESTfull
 
 routes.get('/users', UsersController.index)
@@ -21,6 +21,9 @@ routes.delete('/users/:id', UsersController.destroy)
 
 routes.get('/users/:user_id/repositories', RepositoriesController.index)
 routes.post('/users/:user_id/repositories', RepositoriesController.create)
-routes.delete('/users/:user_id/repositories', RepositoriesController.destroy)
+routes.delete(
+  '/users/:user_id/repositories/:id',
+  RepositoriesController.destroy
+)
 
 export default routes

@@ -36,7 +36,7 @@ class RepositoryController {
       }
       const repository = await Repository.findOne({
         userId: user_id,
-        name
+        url
       })
       // console.log(repository)
       if (repository) {
@@ -48,7 +48,7 @@ class RepositoryController {
       const newRepository = await Repository.create({
         name,
         url,
-        userRd: user_id
+        userId: user_id
       })
 
       return res.status(201).json(newRepository)
